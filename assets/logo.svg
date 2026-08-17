@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="FXログ ロゴマーク">
+  <!--
+    FxLogLogoMark(Flutter版: lib/shared/widgets/fxlog_logo.dart)のSVG移植。
+    2x2グリッドの左上セルのみゴールド塗りつぶし+発光、残り3セルは
+    白枠線(BL-36で確立した「濃紺背景 + 白枠線」パターンをLPでも踏襲)。
+    幾何計算はFlutter版と同じ比率(cell=size*0.34, gap=size*0.06,
+    radius=cell*0.22)をviewBoxのsize=100に適用した値。
+  -->
+  <defs>
+    <filter id="fxlog-mark-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#FFD54F" flood-opacity="0.55" />
+    </filter>
+  </defs>
+  <rect x="13" y="13" width="34" height="34" rx="7.5" fill="#FFD54F" filter="url(#fxlog-mark-glow)" />
+  <rect x="53" y="13" width="34" height="34" rx="7.5" fill="none" stroke="#FFFFFF" stroke-width="2" />
+  <rect x="13" y="53" width="34" height="34" rx="7.5" fill="none" stroke="#FFFFFF" stroke-width="2" />
+  <rect x="53" y="53" width="34" height="34" rx="7.5" fill="none" stroke="#FFFFFF" stroke-width="2" />
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="FXログ favicon">
+  <!--
+    favicon用の簡略版マーク。16-32pxの極小サイズではdrop-shadowフィルタが
+    潰れて見えるため、glowフィルタを外したフラットな塗り+枠線のみの構成
+    にしている(logo.svgとは意図的に別ファイル)。
+    背景は透過ではなくbackground色(#0A0E1A)の角丸正方形で塗り、
+    ブラウザタブの明るい背景でも視認できるようにしている。
+  -->
+  <rect x="0" y="0" width="100" height="100" rx="20" fill="#0A0E1A" />
+  <rect x="13" y="13" width="34" height="34" rx="7.5" fill="#FFD54F" />
+  <rect x="53" y="13" width="34" height="34" rx="7.5" fill="none" stroke="#FFFFFF" stroke-width="3" />
+  <rect x="13" y="53" width="34" height="34" rx="7.5" fill="none" stroke="#FFFFFF" stroke-width="3" />
+  <rect x="53" y="53" width="34" height="34" rx="7.5" fill="none" stroke="#FFFFFF" stroke-width="3" />
+</svg>

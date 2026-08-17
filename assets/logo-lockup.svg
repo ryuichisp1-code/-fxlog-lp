@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" role="img" aria-label="FXログ">
+  <!--
+    logo.svgのマークに「FXログ」テキストを横並びしたロックアップ版。
+    Flutter版FxLogLogoLockupと同じ構成(マーク+テキスト、ゴールド統一)。
+  -->
+  <defs>
+    <filter id="fxlog-lockup-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#FFD54F" flood-opacity="0.55" />
+    </filter>
+  </defs>
+  <rect x="11.7" y="16.7" width="30.6" height="30.6" rx="6.7" fill="#FFD54F" filter="url(#fxlog-lockup-glow)" />
+  <rect x="47.7" y="16.7" width="30.6" height="30.6" rx="6.7" fill="none" stroke="#FFFFFF" stroke-width="1.8" />
+  <rect x="11.7" y="52.7" width="30.6" height="30.6" rx="6.7" fill="none" stroke="#FFFFFF" stroke-width="1.8" />
+  <rect x="47.7" y="52.7" width="30.6" height="30.6" rx="6.7" fill="none" stroke="#FFFFFF" stroke-width="1.8" />
+  <text x="112" y="50" dominant-baseline="central" font-family="'Noto Sans JP', sans-serif" font-size="46" font-weight="700" fill="#FFD54F">FXログ</text>
+</svg>

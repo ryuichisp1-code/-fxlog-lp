@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fxlog.link-ai17.jp/sitemap.xml

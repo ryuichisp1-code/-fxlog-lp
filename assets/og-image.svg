@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="FXログ Coming Soon">
+  <!--
+    OGP画像(1200x630)のSVG版。ClaudeCodeにはラスター画像(PNG)を生成する
+    ツールが無いため、SVGで作成しREADME.mdに記載の手順でPNGへ変換する
+    運用とする(実際のOGPタグにはPNGパスを指定しているため、公開前に
+    このファイルからog-image.pngを書き出す必要がある)。
+  -->
+  <defs>
+    <filter id="og-mark-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FFD54F" flood-opacity="0.5" />
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="1200" height="630" fill="#0A0E1A" />
+  <!-- ロゴマーク(size=160相当) -->
+  <rect x="540.8" y="100.8" width="54.4" height="54.4" rx="12" fill="#FFD54F" filter="url(#og-mark-glow)" />
+  <rect x="604.8" y="100.8" width="54.4" height="54.4" rx="12" fill="none" stroke="#FFFFFF" stroke-width="3.3" />
+  <rect x="540.8" y="164.8" width="54.4" height="54.4" rx="12" fill="none" stroke="#FFFFFF" stroke-width="3.3" />
+  <rect x="604.8" y="164.8" width="54.4" height="54.4" rx="12" fill="none" stroke="#FFFFFF" stroke-width="3.3" />
+  <text x="600" y="330" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="80" font-weight="700" fill="#FFD54F">FXログ</text>
+  <text x="600" y="385" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="500" fill="#FFFFFF">Coming Soon &#8212; 2026.08.31 Launch</text>
+  <text x="600" y="430" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="26" font-weight="400" fill="#9CA3AF">4象限で振り返る、FXトレード記録の新習慣。</text>
+  <text x="600" y="580" text-anchor="middle" font-family="Inter, sans-serif" font-size="26" font-weight="500" fill="#9CA3AF" letter-spacing="1">fxlog.link-ai17.jp</text>
+</svg>
