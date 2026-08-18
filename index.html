@@ -31,12 +31,26 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#0A0E1A" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: render-blockingを避けるため非同期読み込みにする
+       (preload + media=print切替パターン、noscript版で非対応環境に対応)。
+       weightは実使用分のみ厳選: Inter 400/500は.font-en要素がどれも
+       使用しておらず不要だったため除去。Noto Sans JP 800は.hero__title
+       (font-weight:800、font-enクラスなしのため既定のNoto Sans JPで
+       描画される)が使用しているにも関わらず元々リクエストされておらず
+       未読み込みだったため追加(表示上はブラウザのフォールバック/合成
+       太字で代替されていたと見られる、今回発見した既存の潜在バグ)。 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </noscript>
 
-  <link rel="stylesheet" href="/styles/main.css" />
+  <!-- LCP画像(ヒーロー)をpreload -->
+  <link rel="preload" as="image" href="/assets/hero-home.webp" type="image/webp" fetchpriority="high" />
+
+  <link rel="stylesheet" href="/styles/main.min.css" />
 
   <!-- 構造化データ(JSON-LD): Agentic Browsing/リッチリザルト対応 -->
   <script type="application/ld+json">
@@ -267,32 +281,32 @@
 
         <dl class="quadrant-legend">
           <div class="quadrant-legend__item">
-            <span class="quadrant-legend__dot quadrant-legend__dot--profit" aria-hidden="true"></span>
-            <div>
-              <dt class="quadrant-legend__title">ルールを守った勝ちトレード</dt>
-              <dd class="quadrant-legend__desc">規律と結果が伴った、振り返りの中で再現を目指したいパターンです。</dd>
-            </div>
+            <dt class="quadrant-legend__title">
+              <span class="quadrant-legend__dot quadrant-legend__dot--profit" aria-hidden="true"></span>
+              ルールを守った勝ちトレード
+            </dt>
+            <dd class="quadrant-legend__desc">規律と結果が伴った、振り返りの中で再現を目指したいパターンです。</dd>
           </div>
           <div class="quadrant-legend__item">
-            <span class="quadrant-legend__dot quadrant-legend__dot--link" aria-hidden="true"></span>
-            <div>
-              <dt class="quadrant-legend__title">ルールを守った負けトレード</dt>
-              <dd class="quadrant-legend__desc">結果は伴わなかったものの、規律は保てたトレードです。プロセスとしては見直しの必要が小さい場合があります。</dd>
-            </div>
+            <dt class="quadrant-legend__title">
+              <span class="quadrant-legend__dot quadrant-legend__dot--link" aria-hidden="true"></span>
+              ルールを守った負けトレード
+            </dt>
+            <dd class="quadrant-legend__desc">結果は伴わなかったものの、規律は保てたトレードです。プロセスとしては見直しの必要が小さい場合があります。</dd>
           </div>
           <div class="quadrant-legend__item">
-            <span class="quadrant-legend__dot quadrant-legend__dot--warning" aria-hidden="true"></span>
-            <div>
-              <dt class="quadrant-legend__title">ルールを逸脱した勝ちトレード</dt>
-              <dd class="quadrant-legend__desc">結果は出たものの、次も同じ判断で良いかを見直したいトレードです。</dd>
-            </div>
+            <dt class="quadrant-legend__title">
+              <span class="quadrant-legend__dot quadrant-legend__dot--warning" aria-hidden="true"></span>
+              ルールを逸脱した勝ちトレード
+            </dt>
+            <dd class="quadrant-legend__desc">結果は出たものの、次も同じ判断で良いかを見直したいトレードです。</dd>
           </div>
           <div class="quadrant-legend__item">
-            <span class="quadrant-legend__dot quadrant-legend__dot--loss" aria-hidden="true"></span>
-            <div>
-              <dt class="quadrant-legend__title">ルールを逸脱した負けトレード</dt>
-              <dd class="quadrant-legend__desc">振り返りの余地が大きいトレードです。傾向に気づく手がかりになります。</dd>
-            </div>
+            <dt class="quadrant-legend__title">
+              <span class="quadrant-legend__dot quadrant-legend__dot--loss" aria-hidden="true"></span>
+              ルールを逸脱した負けトレード
+            </dt>
+            <dd class="quadrant-legend__desc">振り返りの余地が大きいトレードです。傾向に気づく手がかりになります。</dd>
           </div>
         </dl>
       </div>

@@ -483,18 +483,11 @@ dl {
   margin-inline: auto;
 }
 
-.quadrant-legend__item {
-  display: flex;
-  gap: var(--space-3);
-  align-items: flex-start;
-}
-
 .quadrant-legend__dot {
   flex: 0 0 auto;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin-top: 6px;
 }
 
 .quadrant-legend__dot--profit {
@@ -514,13 +507,17 @@ dl {
 }
 
 .quadrant-legend__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font-weight: 700;
   margin: 0 0 var(--space-1);
   color: var(--color-text-primary);
 }
 
 .quadrant-legend__desc {
-  margin: 0;
+  /* dtの先頭ドット(12px)+gap(--space-3)と左端を揃える */
+  margin: 0 0 0 var(--space-6);
   color: var(--color-text-secondary);
   font-size: var(--fs-small);
   line-height: 1.7;
