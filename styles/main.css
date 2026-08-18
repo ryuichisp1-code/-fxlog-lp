@@ -304,10 +304,19 @@ dl {
   animation: fx-fade-in 0.8s ease-out 0.1s forwards;
 }
 
+/* 句読点・疑問符の直前で改行されないよう、日本語の禁則処理をブラウザの
+   デフォルト(line-break: normal)より厳格に指定する。 */
+.hero__title,
+.hero__subtitle {
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
 .hero__title {
   font-size: var(--fs-hero);
   font-weight: 800;
   letter-spacing: 0.01em;
+  line-height: 1.35;
   margin: 0;
   color: var(--color-text-primary);
   opacity: 0;
