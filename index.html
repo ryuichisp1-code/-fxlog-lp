@@ -62,6 +62,10 @@
         <p class="hero__legal legal-note legal-note--center">
           ※本アプリは投資助言・運用助言を行うものではありません。投資判断はご自身の責任でお願いします。
         </p>
+
+        <div class="phone-frame">
+          <img src="/assets/hero-home.png" alt="FXログ ホーム画面" loading="lazy" />
+        </div>
       </div>
     </header>
 
@@ -187,17 +191,9 @@
               <li class="checklist__item">月次・週次でルール遵守率の推移を確認できます(Proプラン)</li>
             </ul>
           </div>
-          <div class="feature-block__media" aria-hidden="true">
-            <div class="quadrant-grid" style="max-width:280px;">
-              <span class="quadrant-grid__label"></span>
-              <span class="quadrant-grid__label">勝ち</span>
-              <span class="quadrant-grid__label">負け</span>
-              <span class="quadrant-grid__label">遵守</span>
-              <div class="quadrant-cell quadrant-cell--profit"></div>
-              <div class="quadrant-cell quadrant-cell--link"></div>
-              <span class="quadrant-grid__label">逸脱</span>
-              <div class="quadrant-cell quadrant-cell--warning"></div>
-              <div class="quadrant-cell quadrant-cell--loss"></div>
+          <div class="feature-block__media">
+            <div class="phone-frame">
+              <img src="/assets/feature-01-quadrant.png" alt="4象限分析画面" loading="lazy" />
             </div>
           </div>
         </div>
@@ -208,35 +204,34 @@
          セクション6: 主要機能2「SNSカード共有」
          ====================================================================== -->
     <section class="section reveal" id="feature-share" aria-labelledby="feature-share-title">
+      <div class="container container--narrow">
+        <div class="section__header">
+          <p class="section__eyebrow font-en">Feature 02</p>
+          <h2 class="section__title" id="feature-share-title">SNSカード共有</h2>
+        </div>
+        <div class="section__body">
+          <p>トレード記録や成績、マイルールをSNSカードとして手軽に共有できます。規律あるトレードを続ける習慣を、仲間と分かち合うきっかけに。</p>
+          <ul class="checklist">
+            <li class="checklist__item">トレード記録・成績サマリ・マイルールをカード画像として書き出せます</li>
+            <li class="checklist__item">X(旧Twitter)など、普段お使いのSNSにそのまま投稿できます</li>
+            <li class="checklist__item">Proプランでは詳細レイアウトの共有カードも利用できます</li>
+          </ul>
+        </div>
+      </div>
       <div class="container">
-        <div class="feature-block feature-block--reverse">
-          <div class="feature-block__text">
-            <p class="section__eyebrow font-en">Feature 02</p>
-            <h2 class="section__title" id="feature-share-title">SNSカード共有</h2>
-            <p>トレード記録や成績、マイルールをSNSカードとして手軽に共有できます。規律あるトレードを続ける習慣を、仲間と分かち合うきっかけに。</p>
-            <ul class="checklist">
-              <li class="checklist__item">トレード記録・成績サマリ・マイルールをカード画像として書き出せます</li>
-              <li class="checklist__item">X(旧Twitter)など、普段お使いのSNSにそのまま投稿できます</li>
-              <li class="checklist__item">Proプランでは詳細レイアウトの共有カードも利用できます</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <!-- SNS共有カードのプレースホルダー(後日、実際のスクリーンショットに置換予定) -->
-            <svg class="share-card-mock" viewBox="0 0 300 300" role="img" aria-label="SNS共有カードのイメージ(仮)">
-              <rect x="0" y="0" width="300" height="300" fill="#141B2E" />
-              <rect x="0" y="0" width="300" height="3" fill="#FFD54F" />
-              <circle cx="34" cy="34" r="10" fill="#FFD54F" />
-              <rect x="54" y="28" width="70" height="12" rx="3" fill="#FFFFFF" opacity="0.85" />
-              <rect x="20" y="70" width="150" height="16" rx="3" fill="#FFFFFF" opacity="0.6" />
-              <rect x="20" y="110" width="200" height="44" rx="6" fill="#FFD54F" opacity="0.15" />
-              <rect x="20" y="122" width="120" height="20" rx="3" fill="#FFD54F" />
-              <rect x="20" y="176" width="260" height="1" fill="#2A3352" />
-              <rect x="20" y="196" width="90" height="12" rx="3" fill="#FFFFFF" opacity="0.5" />
-              <rect x="20" y="218" width="140" height="12" rx="3" fill="#FFFFFF" opacity="0.5" />
-              <rect x="20" y="240" width="110" height="12" rx="3" fill="#FFFFFF" opacity="0.5" />
-              <rect x="20" y="268" width="80" height="10" rx="3" fill="#6B7280" />
-            </svg>
-          </div>
+        <div class="feature-02-cards">
+          <figure>
+            <div class="phone-frame">
+              <img src="/assets/feature-02-rule-card.png" alt="マイルール共有カード" loading="lazy" />
+            </div>
+            <figcaption>マイルール共有</figcaption>
+          </figure>
+          <figure>
+            <div class="phone-frame">
+              <img src="/assets/feature-02-stats-card.png" alt="成績共有カード" loading="lazy" />
+            </div>
+            <figcaption>成績共有</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -245,14 +240,19 @@
          セクション7: 主要機能3「ルール管理」
          ====================================================================== -->
     <section class="section section--alt reveal" id="feature-rules" aria-labelledby="feature-rules-title">
-      <div class="container container--narrow">
-        <div class="section__header">
-          <p class="section__eyebrow font-en">Feature 03</p>
-          <h2 class="section__title" id="feature-rules-title">ルール管理</h2>
-        </div>
-        <div class="section__body">
-          <p>自分自身のトレードルールを登録し、トレードごとに守れたかどうかを記録できます。利確・損切り・エントリー条件・メンタル面など、カテゴリごとにルールを整理できます。</p>
-          <p>スキャルピング・デイトレード・スイングなど、トレードスタイルに応じて複数のルールセットを使い分けることも可能です。</p>
+      <div class="container">
+        <div class="feature-block feature-block--reverse">
+          <div class="feature-block__text">
+            <p class="section__eyebrow font-en">Feature 03</p>
+            <h2 class="section__title" id="feature-rules-title">ルール管理</h2>
+            <p>自分自身のトレードルールを登録し、トレードごとに守れたかどうかを記録できます。利確・損切り・エントリー条件・メンタル面など、カテゴリごとにルールを整理できます。</p>
+            <p>スキャルピング・デイトレード・スイングなど、トレードスタイルに応じて複数のルールセットを使い分けることも可能です。</p>
+          </div>
+          <div class="feature-block__media">
+            <div class="phone-frame">
+              <img src="/assets/feature-03-rules.png" alt="マイルール一覧画面" loading="lazy" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
