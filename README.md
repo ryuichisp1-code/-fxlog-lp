@@ -43,19 +43,29 @@ python -m http.server 8000
 
 2026-08-31
 
-## OGP画像について(未解決事項)
+## OGP画像・favicon(ラスター画像)について
 
-`assets/og-image.png`(1200×630)はラスター画像を生成するツールが手元に
-無いため未作成。代わりに`assets/og-image.svg`を作成済み。公開前に以下の
-いずれかの方法でSVGからPNGへ変換すること。
+`assets/`配下のSVGソースとPNG/ICO生成物の役割分担は以下の通り。
 
-- ブラウザで`assets/og-image.svg`を開き、開発者ツールのスクリーンショット
-  機能で1200×630のPNGを書き出す
-- Inkscape / resvg 等のローカルツールで変換する
-  (`resvg assets/og-image.svg assets/og-image.png --width 1200 --height 630`)
-- オンラインのSVG→PNG変換サービスを利用する
+- `assets/og-image.svg` — **ブラウザ表示用**(filterあり、`feDropShadow`による
+  ゴールドセルのglowエフェクト付き)
+- `assets/og-image-flat.svg` — **PNG変換用**(filterなし、SVGコンバーター互換版)。
+  CloudConvertがfeDropShadow(filter要素)を処理できず、左上セルのゴールド
+  塗りつぶしごと消える不具合が確認されたため分離した
+- `assets/og-image.png`(1200×630) — `og-image-flat.svg`から生成した最終成果物。
+  OGP/Twitter Cardタグから参照される
 
-同様に、`assets/favicon.ico`・`favicon-16.png`・`favicon-32.png`・
-`favicon-192.png`・`apple-touch-icon.png`もラスター画像のため未作成。
-`assets/favicon.svg`を元に、[realfavicongenerator.net](https://realfavicongenerator.net/)
-等のファビコン生成サービスで一式を書き出すことを推奨する。
+### PNG変換手順(og-image.png再生成が必要な場合)
+
+1. https://cloudconvert.com/svg-to-png にアクセス
+2. `assets/og-image-flat.svg` をアップロード
+3. Options → Width: `1200`, Height: `630` を指定
+4. Convert → Download
+5. ダウンロードしたファイルを `og-image.png` として `assets/` に配置(上書き)
+
+### favicon一式について
+
+`assets/favicon.svg`(モダンブラウザ優先)に加え、`favicon.ico`・
+`favicon-96.png`・`favicon-192.png`・`apple-touch-icon.png`(180×180)を
+[realfavicongenerator.net](https://realfavicongenerator.net/)で生成し配置済み
+(16×16/32×32は同ツールが生成しなかったため96×96/192×192の2サイズで代替)。
