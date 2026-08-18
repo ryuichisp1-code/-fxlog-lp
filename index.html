@@ -37,6 +37,122 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/styles/main.css" />
+
+  <!-- 構造化データ(JSON-LD): Agentic Browsing/リッチリザルト対応 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FXログ",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "description": "4象限分析で「ルール遵守×勝敗」を見える化するFXトレード記録アプリ。感情ではなく記録に基づく振り返り習慣をサポートします。",
+    "url": "https://fxlog.link-ai17.jp",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "380",
+        "priceCurrency": "JPY",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "380",
+          "priceCurrency": "JPY",
+          "unitText": "月額(税込)"
+        }
+      }
+    ],
+    "featureList": [
+      "4象限分析(ルール遵守×勝敗)",
+      "トレード記録",
+      "マイルール管理",
+      "SNSカード共有",
+      "成績サマリー",
+      "CSVエクスポート(Pro)"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FXログ",
+    "url": "https://fxlog.link-ai17.jp",
+    "logo": "https://fxlog.link-ai17.jp/assets/logo.svg"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "完全に無料で使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Freeプランでは、トレード記録月30件・4象限分析直近1ヶ月・マイルール1セットなど一部制限付きで無料でご利用いただけます。より多くの機能をご利用になりたい場合は、月額380円(税込)のProプランをご用意しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どの通貨ペアに対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "USD/JPY・EUR/JPY・GBP/JPY・AUD/JPY・NZD/JPYの主要JPYクロス5種に対応しています(2026年8月時点)。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "自動でトレード記録は取得できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在は手動での記録入力に対応しています。証券会社との自動連携は今後の検討事項です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "データはどこに保存されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "データはクラウドデータベース(Supabase)に保存され、アカウントに紐づけて管理されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Proプランはいつでも解約できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、いつでも解約手続きが可能です。解約後は、契約期間の終了をもってFreeプランへ移行します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "返品・返金はできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "デジタルサービスの性質上、原則として返金には対応しておりません。詳細は特定商取引法に基づく表記をご確認ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "投資助言はしてもらえますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FXログは投資助言・運用助言を行うものではありません。トレードの記録・振り返りをサポートするツールとしてご利用ください。"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="page">
@@ -69,7 +185,10 @@
         </p>
 
         <div class="phone-frame">
-          <img src="/assets/hero-home.png" alt="FXログ ホーム画面" loading="lazy" />
+          <picture>
+            <source srcset="/assets/hero-home.webp" type="image/webp" />
+            <img src="/assets/hero-home.png" alt="FXログ ホーム画面" width="430" height="932" fetchpriority="high" />
+          </picture>
         </div>
       </div>
     </header>
@@ -198,7 +317,10 @@
           </div>
           <div class="feature-block__media">
             <div class="phone-frame">
-              <img src="/assets/feature-01-quadrant.png" alt="4象限分析画面" loading="lazy" />
+              <picture>
+                <source srcset="/assets/feature-01-quadrant.webp" type="image/webp" />
+                <img src="/assets/feature-01-quadrant.png" alt="4象限分析画面" width="430" height="932" loading="lazy" />
+              </picture>
             </div>
           </div>
         </div>
@@ -227,13 +349,19 @@
         <div class="feature-02-cards">
           <figure>
             <div class="phone-frame">
-              <img src="/assets/feature-02-rule-card.png" alt="マイルール共有カード" loading="lazy" />
+              <picture>
+                <source srcset="/assets/feature-02-rule-card.webp" type="image/webp" />
+                <img src="/assets/feature-02-rule-card.png" alt="マイルール共有カード" width="430" height="932" loading="lazy" />
+              </picture>
             </div>
             <figcaption>マイルール共有</figcaption>
           </figure>
           <figure>
             <div class="phone-frame">
-              <img src="/assets/feature-02-stats-card.png" alt="成績共有カード" loading="lazy" />
+              <picture>
+                <source srcset="/assets/feature-02-stats-card.webp" type="image/webp" />
+                <img src="/assets/feature-02-stats-card.png" alt="成績共有カード" width="430" height="932" loading="lazy" />
+              </picture>
             </div>
             <figcaption>成績共有</figcaption>
           </figure>
@@ -255,7 +383,10 @@
           </div>
           <div class="feature-block__media">
             <div class="phone-frame">
-              <img src="/assets/feature-03-rules.png" alt="マイルール一覧画面" loading="lazy" />
+              <picture>
+                <source srcset="/assets/feature-03-rules.webp" type="image/webp" />
+                <img src="/assets/feature-03-rules.png" alt="マイルール一覧画面" width="430" height="932" loading="lazy" />
+              </picture>
             </div>
           </div>
         </div>
@@ -419,7 +550,7 @@
          ====================================================================== -->
     <footer class="footer">
       <div class="container">
-        <div class="footer__columns">
+        <nav class="footer__columns" aria-label="フッターリンク">
           <div class="footer__column">
             <h3 class="footer__column-heading">サービス</h3>
             <ul class="footer__links">
@@ -440,7 +571,7 @@
               <li><a href="mailto:info@smileplanner.co.jp">info@smileplanner.co.jp</a></li>
             </ul>
           </div>
-        </div>
+        </nav>
 
         <div class="footer__notice">
           <p class="footer__notice-title">【重要事項】</p>

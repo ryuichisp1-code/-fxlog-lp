@@ -13,7 +13,10 @@
   --color-surface-variant: #1E2749;
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #9CA3AF;
-  --color-text-tertiary: #6B7280;
+  /* 元値#6B7280は#0A0E1A背景でコントラスト比3.98:1(WCAG AA 4.5:1未達)
+     だったため#818C9Dに調整(#0A0E1A比5.66:1、#141B2E比5.03:1)。
+     legal-note等の法的文言にも使われるため特に重要。 */
+  --color-text-tertiary: #818C9D;
   --color-border: #2A3352;
 
   /* アクセント */
@@ -86,9 +89,24 @@ svg {
   max-width: 100%;
 }
 
+/* pictureは既定でinlineのため、中のimgをそのまま配置したいコンテナ
+   (.phone-frame等)でボックスモデル上の余計な挙動を生まないようにする。 */
+picture {
+  display: contents;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* キーボード操作時のフォーカスリングをブランドカラーで明示する
+   (マウス操作時は表示されない:focus-visibleを使用)。 */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 ul,
